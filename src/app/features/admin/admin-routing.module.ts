@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/register/register.module').then((m) => m.RegisterModule),
   },
-];
+]; 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
