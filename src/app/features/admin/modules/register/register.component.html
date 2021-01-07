@@ -1,0 +1,70 @@
+<div class="modal__auto-display">
+  <div class="modal__overlay"></div>
+  <div class="modal__body">
+    <div class="modal__inner">
+      <div class="modal__inner-login">
+        <form
+          class="authen-form__form"
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <!--Authen form-->
+          <div class="authen-form">
+            <div class="authen-form--container">
+              <div class="authen-form__header">
+                <h3 class="authen-form__heading">Đăng Ký</h3>
+                <button mat-button color="primary">Đăng Nhập</button>
+              </div>
+              <div class="authen-form__form">
+                <div class="authen-form__group">
+                  <!-- <app-input-form-primary></app-input-form-primary> -->
+                
+                  
+                  <div class="input-form">
+                    <mat-form-field class="mat-form-field-input" >
+                      <mat-label  >Nhập Email</mat-label>
+                      <input matInput placeholder="hoangson.hust@gmail.com"  formControlName="emailFormControl">
+                    </mat-form-field>
+                  </div>
+                 
+                  <div class="input-form">
+                    <mat-form-field class="mat-form-field-input" >
+                      <mat-label >Mật Khẩu</mat-label>
+                      <input  matInput  formControlName="passWord">
+                    </mat-form-field>
+                  </div>
+                  <div class="input-form">
+                    <mat-form-field class="mat-form-field-input" >
+                      <mat-label >Nhập Lại Mật Khẩu</mat-label>
+                      <input matInput  formControlName="passWordAgain">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="authen-form__aside">
+                <p class="authen-form__policy-text">
+                  Bằng việc đăng kí, bạn đã đồng ý với S-item về
+                  <a href="" class="authen-form-text-link"
+                    >Điều Khoản Dịch Vụ
+                  </a>
+                  &
+                  <a href="" class="authen-form-text-link">
+                    Chính Sách Bảo Mật</a
+                  >
+                </p>
+              </div>
+              <div class="authen-form--controls">
+                <button class="btn btn--normal authen-form--controls-back">
+                  Trở Lại
+                </button>
+                <button mat-raised-button color="primary" type="submit">
+                  Đăng Ký
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

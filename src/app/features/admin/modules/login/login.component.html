@@ -1,0 +1,94 @@
+<div class="modal__auto-display">
+  <div class="modal__overlay"></div>
+  <div class="modal__body">
+    <div class="modal__inner">
+      <div class="modal__inner-login">
+        <div class="authen-form--introduction">
+          <div class="authen-form-introduction__header">
+            <h3>Chào Mừng Đến Với Trang Đăng Nhập Người Bán</h3>
+          </div>
+          <div class="authen-form-introduction_img"></div>
+        </div>
+        <form
+          class="authen-form__form"
+          (ngSubmit)="onSubmit()"
+          #loginForm="ngForm"
+        >
+          <!--login form-->
+          <div class="authen-form">
+            <div class="authen-form--container">
+              <div class="authen-form__header">
+                <h3 class="authen-form__heading">Đăng Nhập</h3>
+                <span class="authen-form__swicth-btn">Đăng Ký </span>
+              </div>
+
+              <div class="authen-form__group">
+                <input
+                  id="name"
+                  type="text"
+                  class="authen-form__input"
+                  placeholder="Email/ Số Điện Thoại/ Tên Đăng Nhập"
+                  [(ngModel)]="adminLogin.userName"
+                  name="username"
+                />
+                {{ name }}
+                <span *ngIf="adminLogin.userName === ''"
+                  >*Cần Phải Nhập User Name</span
+                >
+                <!-- <input [(ngModel)]="adminLogin.userName"  [ngModelOptions]="{standalone: true}"/>
+                {{ adminLogin.userName}} -->
+                <div class="authen-form__group">
+                  <input
+                    id="password"
+                    #Password
+                    type="password"
+                    class="authen-form__input"
+                    placeholder="Mật Khẩu"
+                    [(ngModel)]="adminLogin.passWord"
+                    name="password"
+                  />
+                </div>
+                <select (change)="selectVehicle($event)">
+                  <option *ngFor="let car of vehicles">
+                    {{ car }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="authen-form__aside">
+                <div class="authen-form__help">
+                  <ul class="authen-form__help-list">
+                    <li
+                      class="authen-form__help-item authen-form__help-item--separate"
+                    >
+                      <a
+                        href=""
+                        class="authen-form__help-item--link authen-form__help-item--link-fotget-password"
+                        >Quên Mật Khẩu</a
+                      >
+                    </li>
+                    <li class="authen-form__help-item">
+                      <a
+                        href=""
+                        class="authen-form__help-item--link authen-form__help-item--link-help"
+                        >Cần Trợ Giúp?</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="authen-form--controls-login">
+                <button class="btn btn--normal authen-form--controls-back">
+                  Trở Lại
+                </button>
+                <button  mat-raised-button color="primary"type="submit"
+                [disabled]="!loginForm.form.valid">Đăng Nhập</button>
+                
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

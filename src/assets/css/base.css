@@ -1,0 +1,141 @@
+:root {
+  /*tham chiếu đến phần tử gốc là <html>*/
+  --tim-color:#9c27b0;
+  --main-color: #7b1fa2;
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #333; /*dùng để đọc, đọc lâu không bị mỏi mắt*/
+  --border-color: #dbdbdb;
+
+  /*ADMIN-PART*/
+  --admin-header-height: 64px;
+  --admin-header-top-height:64px;
+  --admin-header-bottom-height:var(--header-height) - var(--header-top-height);
+  --admin-narbar-height: 34px;
+  --admin-header-with-search-height: calc(
+    var(--admin-header-height) - var(--admin-narbar-height)
+  );
+  /*CUSTOMER-PART*/
+  --header-height: 140px;
+  --header-top-height:40px;
+  --header-bottom-height:var(--header-height) - var(--header-top-height);
+  --narbar-height: 34px;
+  --header-with-search-height: calc(
+    var(--header-height) - var(--narbar-height)
+  );
+}
+* {
+  /*apply tất cả lên các phần tử*/
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif; /*sans-serif: chổng không có chân, dùng khi không có mạng => dùng 1 cái trên máy thay thế*/
+  box-sizing: border-box;
+}
+.grid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  
+}
+.grid_full-width {
+  width: 100%;
+}
+.grid_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*animation*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-from));
+  }
+  to {
+    transform: scale(var(--growth-to));
+  }
+}
+/*MODAL*/
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  animation: fadeIn linear 0.1s;
+  display: none;
+}
+.modal__auto-display {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  animation: fadeIn linear 0.1s;
+}
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body {
+  --growth-form: 0.7;
+  --growth-to: 1;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  animation: growth linear 0.1s;
+}
+/*btn style*/
+
+.btn {
+  background-color: #fff;
+  color: var(--text-color);
+  min-width: 142px;
+  height: 34px;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn.btn--normal:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.btn.btn--primary {
+  background-color: var(--main-color);
+}
+.btn.btn--disibled {
+  color: #949494;
+  cursor: default;
+  background-color: #c3c3c3;
+}
+.btn--size-s {
+  height: 32px;
+  font-size: 12px;
+  padding: 0 8px;
+}
+.input-form{
+  font-size: 1.4rem;
+  width: 100%;
+}

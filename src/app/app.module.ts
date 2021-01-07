@@ -3,16 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './core/utils/material.module';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
 
+registerLocaleData(en);
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // BoldDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    MaterialModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
