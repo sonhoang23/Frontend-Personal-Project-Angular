@@ -1,1 +1,38 @@
-<p>draw-container works!</p>
+<div class="sidebar__container">
+	<ul class="sidebar__menu">
+		<li class="sidebar__menu--box">
+			<!--mat -->
+			<mat-accordion>
+				<mat-expansion-panel
+					class="sidebar__menu--box-expansion-panel"
+					(opened)="panelOpenState = true"
+					(closed)="panelOpenState = false"
+				>
+					<mat-expansion-panel-header class="sidebar__menu--box-item">
+						<img
+							src="https://cf.shopee.vn/file/c15905d5a6284687c4a6ad00d0feb511"
+							alt=""
+							class="sidebar__menu--box-item-icon"
+						/>
+						<span class="sidebar__menu--box-item-text"> Vận Chuyển </span>
+					</mat-expansion-panel-header>
+					<ul class="sidebar__menu--box-submenu">
+						<li class="sidebar__submenu-item">
+							<a>I'm visible because I am open</a>
+						</li>
+						<li class="sidebar__submenu-item">
+							<a>I'm visible because I am open</a>
+						</li>
+						<li class="sidebar__submenu-item">
+							<a>I'm visible because I am open</a>
+						</li>
+						<li class="sidebar__submenu-item">
+							<a>I'm visible because I am open</a>
+						</li>
+					</ul>
+				</mat-expansion-panel>
+			</mat-accordion>
+			<!---->
+		</li>
+	</ul>
+</div>

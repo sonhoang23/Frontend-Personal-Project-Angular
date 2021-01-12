@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "customer-body.component.sass"
+    ],
+    "names": [],
+    "file": "customer-body.component.css"
+}

@@ -10,6 +10,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 const MaterialModuleAdd = [
   MatButtonModule,
   MatInputModule,
@@ -19,7 +20,8 @@ const MaterialModuleAdd = [
   MatGridListModule,
   MatSelectModule,
   MatExpansionModule,
-  MatCardModule
+  MatCardModule,
+  MatSlideToggleModule,
 
 ];
 @NgModule({

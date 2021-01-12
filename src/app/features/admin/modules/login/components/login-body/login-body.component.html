@@ -1,0 +1,66 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>Đăng Nhập</mat-card-title>
+		<mat-card-subtitle>Đăng Ký</mat-card-subtitle>
+	</mat-card-header>
+	<form [formGroup]="adminLoginForm" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+		<mat-card-content class="modal__inner--login-content">
+			<mat-form-field class="login__input--username">
+				<input
+					matInput
+					type="text"
+					placeholder="Email/ Số Điện Thoại/ Tên Đăng Nhập"
+					formControlName="userNameFormControl"
+				/>
+			</mat-form-field>
+			<span *ngIf="adminLogin.userName === ''">*Cần Phải Nhập User Name</span>
+			<mat-form-field class="login__input--username">
+				<input
+					matInput
+					type="password"
+					placeholder="Mật Khẩu"
+					formControlName="passWordFormControl"
+				/>
+            </mat-form-field>
+		
+		
+			<mat-slide-toggle
+			
+				[ngModel]="rememberChecked"
+				formControlName="rememberMeFormControl"
+			>
+				Ghi Nhớ Mật Khẩu
+			</mat-slide-toggle>
+			<ul class="authen-form__help-list">
+				<li class="authen-form__help-item authen-form__help-item--separate">
+					<a
+						href=""
+						class="authen-form__help-item--link authen-form__help-item--link-fotget-password"
+						>Quên Mật Khẩu</a
+					>
+				</li>
+				<li class="authen-form__help-item">
+					<a
+						href=""
+						class="authen-form__help-item--link authen-form__help-item--link-help"
+						>Cần Trợ Giúp?</a
+					>
+				</li>
+			</ul>
+		</mat-card-content>
+		<mat-card-actions>
+			<button mat-button>Trở Lại</button>
+			<button
+				mat-raised-button
+				color="primary"
+				type="submit"
+				[disabled]="!loginForm.form.valid"
+			>
+				Đăng Nhập
+			</button>
+		</mat-card-actions>
+	</form>
+	<pre>{{adminLoginForm.value|json}}</pre>
+	<pre>{{adminLoginForm.get("rememberMeFormControl").valueChanges}}</pre>
+	<pre>{{adminLoginForm.errors|json}}</pre>
+</mat-card>
