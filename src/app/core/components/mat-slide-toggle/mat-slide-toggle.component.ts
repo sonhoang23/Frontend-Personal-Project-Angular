@@ -7,15 +7,11 @@ import {MatSlideToggle, MatSlideToggleChange} from "@angular/material";
 	styleUrls: ["./mat-slide-toggle.component.sass"]
 })
 export class MatSlideToggleComponent implements OnInit {
-	@Input() toggleValue: string;
-	@Output() change = new EventEmitter<MatSlideToggleChange>();
-	@Output() toggleChange = new EventEmitter<void>();
-	onChange(ob: MatSlideToggleChange) {
-    console.log(ob.checked);
-    let matSlideToggle: MatSlideToggle = ob.source;	
-    console.log(matSlideToggle.color);
-    console.log(matSlideToggle.required);
-  } 
+	@Input() toggleName: string;
+	@Output() toggleChange = new EventEmitter<boolean>();
+	onChangeToggle(ob: MatSlideToggleChange) {
+		this.toggleChange.emit(ob.checked);
+	}
 	constructor() {}
 
 	ngOnInit() {}

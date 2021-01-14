@@ -15,47 +15,27 @@
 			</mat-form-field>
 			<span *ngIf="adminLogin.userName === ''">*Cần Phải Nhập User Name</span>
 			<mat-form-field class="login__input--username">
-				<input
-					matInput
-					type="password"
-					placeholder="Mật Khẩu"
-					formControlName="passWordFormControl"
-				/>
-            </mat-form-field>
-		
-		
-			<mat-slide-toggle
-			
-				[ngModel]="rememberChecked"
-				formControlName="rememberMeFormControl"
-			>
+				<input matInput type="password" placeholder="Mật Khẩu" formControlName="passWordFormControl" />
+			</mat-form-field>
+
+			<app-mat-slide-toggle (toggleChange)="onChangeToggle($event)" [toggleName]="toggleName"></app-mat-slide-toggle>
+			<mat-slide-toggle [ngModel]="rememberChecked" formControlName="rememberMeFormControl">
 				Ghi Nhớ Mật Khẩu
 			</mat-slide-toggle>
 			<ul class="authen-form__help-list">
 				<li class="authen-form__help-item authen-form__help-item--separate">
-					<a
-						href=""
-						class="authen-form__help-item--link authen-form__help-item--link-fotget-password"
+					<a href="" class="authen-form__help-item--link authen-form__help-item--link-fotget-password"
 						>Quên Mật Khẩu</a
 					>
 				</li>
 				<li class="authen-form__help-item">
-					<a
-						href=""
-						class="authen-form__help-item--link authen-form__help-item--link-help"
-						>Cần Trợ Giúp?</a
-					>
+					<a href="" class="authen-form__help-item--link authen-form__help-item--link-help">Cần Trợ Giúp?</a>
 				</li>
 			</ul>
 		</mat-card-content>
 		<mat-card-actions>
 			<button mat-button>Trở Lại</button>
-			<button
-				mat-raised-button
-				color="primary"
-				type="submit"
-				[disabled]="!loginForm.form.valid"
-			>
+			<button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">
 				Đăng Nhập
 			</button>
 		</mat-card-actions>
